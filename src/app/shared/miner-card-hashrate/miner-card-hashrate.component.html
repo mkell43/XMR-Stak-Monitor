@@ -1,0 +1,42 @@
+<h3>Hashrate</h3>
+<div>
+    <table class="table table-stripe table-responsive">
+        <thead>
+            <th scope="col">
+                Thread ID
+            </th>
+            <th scope="col">
+                10s
+            </th>
+            <th scope="col">
+                60s
+            </th>
+            <th scope="col">
+                15m
+            </th>
+        </thead>
+        <tbody *ngFor="let thread of hashrate?.threads; let i = index" [attr.data-index]="i">
+            <tr>
+                <th scope="row">{{i}}</th>
+                <td>{{thread[0]}}</td>
+                <td>{{thread[1]}}</td>
+                <td>{{thread[2]}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>TOTALS (H/s)</td>
+                <td>{{hashrate?.total[0]}}</td>
+                <td>{{hashrate?.total[1]}}</td>
+                <td>{{hashrate?.total[2]}}</td>
+            </tr>
+            <tr>
+                <td>Highest</td>
+                <td>
+                    {{hashrate?.highest}}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

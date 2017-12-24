@@ -1,0 +1,6 @@
+{
+  "name": "XMR Stak Dashboard",
+  "description": "Dashboard for XMR Stack",
+  "repository": "https://github.com/raylehnhof/xmr-stak-dashboard",
+  "keywords": ["angular2", "express", "node"]
+}

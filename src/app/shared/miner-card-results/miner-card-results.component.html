@@ -1,0 +1,11 @@
+<h3>Results Report</h3>
+    <dl>
+        <dt>Difficulty</dt>
+        <dd>{{results?.diff_current}}</dd>
+        <dt>Good Results</dt>
+        <dd>{{results?.shares_good}} / {{results?.shares_total}} ({{ (results?.shares_good / results?.shares_total) * 100}} %)</dd>
+        <dt>Avg Result time</dt>
+        <dd>{{results?.avg_time}} s</dd>
+        <dt>Pool-side hashes</dt>
+        <dd>{{results?.hashes_total}}</dd>
+    </dl>

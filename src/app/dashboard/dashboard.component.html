@@ -1,0 +1,7 @@
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let miner of miners$ | async" class="col-md-2">
+      <miner-card [miner]="miner"></miner-card>
+    </div>
+  </div>
+</div>
