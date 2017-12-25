@@ -21,7 +21,7 @@ We assume that you have a running version of nodejs on your computer. If you don
 
   The minersconfig file should look somewhat like this:
 
-  `
+````typescript
   export const miners = {
       "miners":[
           {"name":"Miner", "url":"http://192.168.86.72:10080", "username":"", "password":""},
@@ -29,7 +29,7 @@ We assume that you have a running version of nodejs on your computer. If you don
           {"name":"Desktop", "url":"http://localhost:10080", "username":"", "password":""}
       ]
   }
-  `
+````
 
   The app will append the `/api.json` URL, so do not include it.
 
