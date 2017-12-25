@@ -17,7 +17,7 @@ This monitor uses nodejs, express, and angular2.
 We assume that you have a running version of nodejs on your computer. If you don't have it, you will need to [download it](http://nodejs.org) from the nodejs website.
 
 1. Download the Project
-1. Modify the minersconfig.ts file in `server/minersconfig.ts` to match your setup:
+1. Modify the minersconfig.ts file in [server/minersconfig.ts](https://github.com/Raylehnhoff/XMR-Stak-Monitor/blob/master/server/minersconfig.ts) to match your setup:
 
   The minersconfig file should look somewhat like this:
 
@@ -43,5 +43,5 @@ We assume that you have a running version of nodejs on your computer. If you don
 
 ## Changing things
 
-If you want to change the port the server runs on, you will need to modify the file in `server/config.ts` -- by default, it runs on port 4300, with the angular (client app/dashboard) running on port 4200. To change the angular app's port, modify `protractor.conf.js` and change it to whatever you want.
+If you want to change the port the server runs on, you will need to modify the file in [server/config.ts](https://github.com/Raylehnhoff/XMR-Stak-Monitor/blob/master/server/config.ts) -- by default, it runs on port 4300, with the angular (client app/dashboard) running on port 4200. To change the angular app's port, modify [protractor.conf.js](https://github.com/Raylehnhoff/XMR-Stak-Monitor/blob/master/protractor.conf.js#L15) and change it to whatever you want.
 
