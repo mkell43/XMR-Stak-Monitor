@@ -1,6 +1,6 @@
 # XMR Stak Monitor
 
-![image](https://i.imgur.com/JBcu5lf.jpg)
+![image](https://imgur.com/ZSRAjsQ)
 
 ## About
 
