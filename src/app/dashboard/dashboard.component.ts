@@ -21,7 +21,6 @@ export class DashboardComponent {
   }
 
   ngOnInit() {
-    this.hasMiners = false;
   }
 
   

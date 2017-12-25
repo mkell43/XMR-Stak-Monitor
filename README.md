@@ -1,69 +1,45 @@
-<img width="150" src="https://i.cloudup.com/zfY6lL7eFa-3000x3000.png" />
-<img width="50" src="https://angular.io/assets/images/logos/angular/angular.svg" />
+# XMR Stak Monitor
 
-## Angular4+ Express Starter ( Advanced )
+## About
 
-- Angular 5+
-- ExpressJS ( 4.x - with compression )
-- Webpack ( angular-cli )
+This app was created by me, RayLehnhoff. If you want to support future development of this dashboard, buy me a beer, or otherwise throw XMR my way, my wallet address is: `42XXeiS1eYLj9EKYqcDE6FHivg7wead8x9MVkZmggMGHDpmJ9yoZqMD5XbdPaNRmBq4tSXsuwfn7gLgwB781YbqHCKbNPCt`
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+## Project Description
 
-## Concepts
+This monitor serves as a dashboard for users that miner on several devices.
 
-- Redux ( NgRx/Store - with server calls)
-- Smart & dumb components
-- AOT: Ahead-of-Time compilation
-- Advanced routing ( lazy loading, router outlets...)
+This monitor uses nodejs, express, and angular2.
 
-## Install / Development
+## Get Started
 
-```bash
-git clone https://github.com/vladotesanovic/angular2-express-starter
-cd angular2-express-starter
+We assume that you have a running version of nodejs on your computer. If you don't have it, you will need to [download it](http://nodejs.org) from the nodejs website.
 
-# Install dependencies
-npm install
+1. Download the Project
+1. Modify the minersconfig.ts file in `server/minersconfig.ts` to match your setup:
 
-# start server
-npm run start
+  The minersconfig file should look somewhat like this:
 
-# Client url: http://localhost:4200
-# Application ( epxress ) API: http://localhost:4300
-```
+  `
+  export const miners = {
+      "miners":[
+          {"name":"Miner", "url":"http://192.168.86.72:10080", "username":"", "password":""},
+          {"name":"Server", "url":"http://192.168.86.4:60080", "username":"admin", "password":"admin"},
+          {"name":"Desktop", "url":"http://localhost:10080", "username":"", "password":""}
+      ]
+  }
+  `
 
-Install Redux DevTools chrome extenstion:
+  The app will append the `/api.json` URL, so do not include it.
 
-https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
+  These URLs can be either remote or local -- it doesn't matter.
 
-## Build / Production
+1. Open a terminal/command shell, change the directory to the XMR-STAK-Monitor folder and run:
+  `npm install`
+  `npm run start`
 
-```bash
+1. Browse to [http://localhost:4200](http://localhost:4200) -- the dashboard should now load.
 
-npm run build
+## Changing things
 
-## Deploy dist folder to app server
+If you want to change the port the server runs on, you will need to modify the file in `server/config.ts` -- by default, it runs on port 4300, with the angular (client app/dashboard) running on port 4200. To change the angular app's port, modify `protractor.conf.js` and change it to whatever you want.
 
-Structure of dist folder:
-
-/dist/server <-- expressjs
-/dist/client <-- angular2
-
-```
-
-## Note
-
-All html and css are from: http://www.w3schools.com/howto/
-<table style="border: 0">
-  <tr>
-    <td><img width="200" src="http://www.innovic.io/favicon.png" /></td>
-    <td>
-      <ul>
-        <li>INNOVIC doo</li>
-        <li>Software consulting company for building full stack solutions.</li>
-        <li>Proficient in: NodeJS, TypeScript, Angular, MongoDB...</li>
-        <li><b>You have project for us? hello@innovic.io</b></li>
-      </ul>
-    </td>
-  </tr>
-</table>
