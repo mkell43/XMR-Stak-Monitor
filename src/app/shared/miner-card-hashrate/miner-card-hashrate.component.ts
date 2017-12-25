@@ -16,7 +16,7 @@ export class MinerCardHashrateComponent implements OnInit {
     }
     ngOnInit() {
         this.dataObservable.subscribe((data) => {
-            this.hashrate = data.hashrate;
+            this.hashrate = data.data.hashrate;
         });
     }
 }

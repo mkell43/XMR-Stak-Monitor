@@ -33,8 +33,12 @@ export interface IXmrStakResults{
 }
 
 export interface IXmrStakApiResponse {
-    "version":string
-    "hashrate":IXmrStakHashRate,
-    "results":IXmrStakResults,
-    "connection":IXmrStakConnection
+    "result":string,
+    "minerName":string,
+    data:{
+      "version":string
+      "hashrate":IXmrStakHashRate,
+      "results":IXmrStakResults,
+      "connection":IXmrStakConnection
+    }
  }

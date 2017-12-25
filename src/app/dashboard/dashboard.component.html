@@ -1,7 +1,51 @@
 <div class="container-fluid">
-  <div class="row">
-    <div *ngFor="let miner of miners$ | async" class="col-md-2">
-      <miner-card [miner]="miner"></miner-card>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Summary</h3>
+        <table class="table table-stripe">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>10s</th>
+              <th>60s</th>
+              <th>15m</th>
+              <th>Errors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let miner of rollup">
+              <ng-container *ngIf="miner.minerName != 'Total'">
+                <td>
+                  {{miner.minerName}}
+                </td>
+                <td>{{miner.hashRateTotals[0]}}</td>
+                <td>{{miner.hashRateTotals[1]}}</td>
+                <td>{{miner.hashRateTotals[2]}}</td>
+                <td [style.color]="miner.errors == 0 ? 'green' : 'red'">{{miner.errors}}</td>
+              </ng-container>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr *ngFor="let miner of rollup">
+              <ng-container *ngIf="miner.minerName == 'Total'">
+                <th>
+                  {{miner.minerName}}
+                </th>
+                <th>{{miner.hashRateTotals[0].toFixed(1)}}</th>
+                <th>{{miner.hashRateTotals[1].toFixed(1)}}</th>
+                <th>{{miner.hashRateTotals[2].toFixed(1)}}</th>
+                <th [style.color]="miner.errors == 0 ? 'green' : 'red'">{{miner.errors}}</th>
+              </ng-container>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
     </div>
-  </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div *ngFor="let miner of miners$ | async" role="tablist">
+          <miner-card [miner]="miner" (minerUpdated)="minerUpdated($event)"></miner-card>
+        </div>
+      </div>
+    </div>
 </div>

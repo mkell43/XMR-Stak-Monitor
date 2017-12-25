@@ -16,7 +16,7 @@ export class MinerCardResultsComponent implements OnInit {
     }
     ngOnInit() {
         this.dataObservable.subscribe((data) => {
-            this.results = data.results;
+            this.results = data.data.results;
         });
     }
 }
