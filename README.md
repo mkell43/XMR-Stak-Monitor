@@ -1,5 +1,7 @@
 # XMR Stak Monitor
 
+![image](https://i.imgur.com/JBcu5lf.jpg)
+
 ## About
 
 This app was created by me, RayLehnhoff. If you want to support future development of this dashboard, buy me a beer, or otherwise throw XMR my way, my wallet address is: `42XXeiS1eYLj9EKYqcDE6FHivg7wead8x9MVkZmggMGHDpmJ9yoZqMD5XbdPaNRmBq4tSXsuwfn7gLgwB781YbqHCKbNPCt`
