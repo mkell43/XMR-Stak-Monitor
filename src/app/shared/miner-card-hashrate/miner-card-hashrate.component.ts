@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, OnInit, EventEmitter } from '@angular/core';
 import { IXmrStakApiResponse, IXmrStakHashRate } from "../../../typings";
 import { Observable } from "rxjs";
 import { TimerObservable } from "rxjs/observable/TimerObservable";
@@ -9,14 +9,19 @@ import 'rxjs/add/operator/takeWhile';
     templateUrl: './miner-card-hashrate.component.html'
 })
 export class MinerCardHashrateComponent implements OnInit {
-    @Input() dataObservable: Observable<any>;
     public hashrate:IXmrStakHashRate;
+
+    @Input()
+    public minerUpdated: EventEmitter<any>;
     constructor() {
 
     }
     ngOnInit() {
-        this.dataObservable.subscribe((data) => {
-            this.hashrate = data.data.hashrate;
-        });
+
     }
+
+    notify(data:IXmrStakApiResponse){
+        this.hashrate = data.data.hashrate;
+    }
+    
 }

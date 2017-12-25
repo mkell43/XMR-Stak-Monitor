@@ -9,14 +9,15 @@ import 'rxjs/add/operator/takeWhile';
     templateUrl: './miner-card-results.component.html'
 })
 export class MinerCardResultsComponent implements OnInit {
-    @Input() dataObservable: Observable<any>;
     public results:IXmrStakResults;
     constructor() {
 
     }
     ngOnInit() {
-        this.dataObservable.subscribe((data) => {
-            this.results = data.data.results;
-        });
+
+    }
+
+    notify(data:IXmrStakApiResponse){
+        this.results = data.data.results;
     }
 }
