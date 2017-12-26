@@ -16,6 +16,7 @@
             <div *ngIf="apiResult?.result == 'success'">
                 <miner-card-hashrate #minerCardHashrrate [minerUpdated]="minerUpdated"></miner-card-hashrate>
                 <miner-card-results #minerCardResults></miner-card-results>
+                <miner-card-connections #minerCardConnections></miner-card-connections>
             </div>
             <div *ngIf="apiResult == null">
                 Loading...

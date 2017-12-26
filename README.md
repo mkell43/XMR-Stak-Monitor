@@ -17,7 +17,7 @@ This monitor uses nodejs, express, and angular2.
 We assume that you have a running version of nodejs on your computer. If you don't have it, you will need to [download it](http://nodejs.org) from the nodejs website.
 
 1. Download the Project
-1. Modify the minersconfig.ts file in [server/minersconfig.ts](https://github.com/Raylehnhoff/XMR-Stak-Monitor/blob/master/server/minersconfig.ts) to match your setup:
+1. Modify the minersconfig.local.ts file in [server/minersconfig.local.ts](https://github.com/Raylehnhoff/XMR-Stak-Monitor/blob/master/server/minersconfig.local.ts) to match your setup:
 
   The minersconfig file should look somewhat like this:
 
@@ -34,6 +34,8 @@ We assume that you have a running version of nodejs on your computer. If you don
   The app will append the `/api.json` URL, so do not include it.
 
   These URLs can be either remote or local -- it doesn't matter.
+
+  The minersconfig.local.ts file is ignored by this project, so updates should not wipe it out.
 
 1. Open a terminal/command shell, change the directory to the XMR-STAK-Monitor folder and run:
   `npm install`

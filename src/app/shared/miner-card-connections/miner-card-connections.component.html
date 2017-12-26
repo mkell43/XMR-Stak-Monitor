@@ -1,0 +1,17 @@
+<h3>Connections Report</h3>
+<dl>
+    <dt>Pool</dt>
+    <dd>{{connections?.pool}}</dd>
+    <dt>Uptime</dt>
+    <dd>{{connections?.uptime}}</dd>
+    <dt>Ping</dt>
+    <dd>{{connections?.ping}} s</dd>
+</dl>
+<ng-container *ngIf="connections?.error_log.length">
+    <h4>Errors</h4>
+    <ol>
+        <li *ngFor="let error of connections?.error_log">
+            {{error}}
+        </li>
+    </ol>
+</ng-container>

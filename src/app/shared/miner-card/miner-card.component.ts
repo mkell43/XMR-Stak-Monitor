@@ -1,6 +1,4 @@
 import { Component, Input, ChangeDetectionStrategy, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { Observable } from "rxjs";
 import { TimerObservable } from "rxjs/observable/TimerObservable";
 import 'rxjs/add/operator/takeWhile';
@@ -10,6 +8,7 @@ import { IMiners } from '../../store/miners/miners.reducer';
 import { IXmrStakApiResponse } from "../../../typings";
 import { MinerCardHashrateComponent } from '../miner-card-hashrate/miner-card-hashrate.component';
 import { MinerCardResultsComponent } from '../miner-card-results/miner-card-results.component';
+import { MinerCardConnectionsComponent } from '../miner-card-connections/miner-card-connections.component';
 
 @Component({
   selector: 'miner-card',
@@ -26,6 +25,10 @@ export class MinerCardComponent implements OnInit {
 
   @ViewChild("minerCardResults")
   private minerCardResults: MinerCardResultsComponent;
+
+  @ViewChild("minerCardConnections")
+  private minerCardConnections: MinerCardConnectionsComponent;
+  
   private interval: number;
   private alive: boolean;
 
@@ -51,11 +54,13 @@ export class MinerCardComponent implements OnInit {
             this.minerUpdated.emit(data);
             this.hashRateCard.notify(data);
             this.minerCardResults.notify(data);
+            this.minerCardConnections.notify(data);
           },(error)=>{
             this.apiResult = error;
             this.minerUpdated.emit(error);
             this.hashRateCard.notify(error);
             this.minerCardResults.notify(error);
+            this.minerCardConnections.notify(error);
           });
       });
   }

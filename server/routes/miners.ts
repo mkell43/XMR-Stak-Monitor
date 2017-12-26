@@ -1,5 +1,5 @@
 import { Request, Response, Router } from "express";
-import { miners } from "../minersconfig";
+import { miners } from "../minersconfig.local";
 var request = require("request");
 
 const minersRouter: Router = Router();

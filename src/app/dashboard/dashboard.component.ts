@@ -37,7 +37,9 @@ export class DashboardComponent {
         hashRateTotals: miner.data.hashrate.total.slice(0),
         errors: miner.data.results.error_log.length,
         sharesGood: miner.data.results.shares_good,
-        sharesTotal: miner.data.results.shares_total
+        sharesTotal: miner.data.results.shares_total,
+        uptime: miner.data.connection.uptime,
+        ping: miner.data.connection.ping
       });
 
       index = this.rollup.findIndex((item) => item.minerName == "Total");
