@@ -80,8 +80,19 @@ export class DashboardComponent {
       total.errors = accumulator3;
 
       total.uptimeToString = this.convertUptimeToString(accumulator6);
+      
       this.rollup.push(total);
+      this.rollup.sort((a:any, b:any)=>{
+        var nameA = a.minerName.toUpperCase(),
+            nameB = b.minerName.toUpperCase();
 
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+      })
       this.ref.markForCheck();
     }
   }
