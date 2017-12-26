@@ -43,7 +43,13 @@ We assume that you have a running version of nodejs on your computer. If you don
 
 1. Browse to [http://localhost:4200](http://localhost:4200) -- the dashboard should now load.
 
+## Docker
+
+1. Run `docker build -t xmr-stak-monitor .`
+2. Run `docker run -p 4200:4200 --net=host --name=xmr-stak-monitor xmr-stak-monitor` <sup>See Note</sup>
+
+Note: Unfortunately, on my host, I was unable to get this to load without using the `--net=host` option.  If you want to run this remotely, you will need to put it behind a proxy such as nginx, caddy, or apache.
+
 ## Changing things
 
 If you want to change the port the server runs on, you will need to modify the file in [server/config.ts](https://github.com/Raylehnhoff/XMR-Stak-Monitor/blob/master/server/config.ts) -- by default, it runs on port 4300, with the angular (client app/dashboard) running on port 4200. To change the angular app's port, modify [protractor.conf.js](https://github.com/Raylehnhoff/XMR-Stak-Monitor/blob/master/protractor.conf.js#L15) and change it to whatever you want.
-
