@@ -29,7 +29,8 @@ export interface IXmrStakResults{
   "pool":string,
   "uptime":number,
   "ping":number,
-  "error_log":Array<IXmrStakErrorLog>
+  "error_log":Array<IXmrStakErrorLog>,
+  "uptimeToString":string
 }
 
 export interface IXmrStakApiResponse {

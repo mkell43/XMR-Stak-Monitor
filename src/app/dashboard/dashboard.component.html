@@ -25,7 +25,7 @@
                 <td>{{miner.hashRateTotals[1]}}</td>
                 <td>{{miner.hashRateTotals[2]}}</td>
                 <td>{{miner.sharesGood}} / {{miner.sharesTotal}} ({{(miner.sharesGood / miner.sharesTotal * 100).toFixed(0)}}%)</td>
-                <td>{{miner.uptime}}</td>
+                <td>{{miner.uptimeToString}}</td>
                 <td>{{miner.ping}}</td>
                 <td [style.color]="miner.errors == 0 ? 'green' : 'red'">{{miner.errors}}</td>
               </ng-container>
@@ -41,7 +41,7 @@
                 <th>{{miner.hashRateTotals[1].toFixed(1)}}</th>
                 <th>{{miner.hashRateTotals[2].toFixed(1)}}</th>
                 <th>{{miner.sharesGood}} / {{miner.sharesTotal}} ({{(miner.sharesGood / miner.sharesTotal * 100).toFixed(0)}}%)</th>
-                <th></th>
+                <th>{{miner.uptimeToString}}</th>
                 <th></th>
                 <th [style.color]="miner.errors == 0 ? 'green' : 'red'">{{miner.errors}}</th>
               </ng-container>
