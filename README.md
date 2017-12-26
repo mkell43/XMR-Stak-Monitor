@@ -46,9 +46,7 @@ We assume that you have a running version of nodejs on your computer. If you don
 ## Docker
 
 1. Run `docker build -t xmr-stak-monitor .`
-2. Run `docker run -p 4200:4200 --net=host --name=xmr-stak-monitor xmr-stak-monitor` <sup>See Note</sup>
-
-Note: Unfortunately, on my host, I was unable to get this to load without using the `--net=host` option.  If you want to run this remotely, you will need to put it behind a proxy such as nginx, caddy, or apache.
+2. Run `docker run -p 4200:4200 -p 4300:4300 --name=xmr-stak-monitor xmr-stak-monitor`
 
 ## Changing things
 

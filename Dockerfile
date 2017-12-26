@@ -5,6 +5,6 @@ COPY . .
 
 RUN npm install --production --unsafe-perm
 
-EXPOSE 4200
+EXPOSE 4200 4300
 
-CMD ["npm", "run", "start", "--production"]
+CMD ["npm", "run", "start:prod", "--production"]
