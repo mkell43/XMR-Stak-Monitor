@@ -7,11 +7,5 @@
     <dt>Ping</dt>
     <dd>{{connections?.ping}} s</dd>
 </dl>
-<ng-container *ngIf="connections?.error_log.length">
-    <h4>Errors</h4>
-    <ol>
-        <li *ngFor="let error of connections?.error_log">
-            {{error}}
-        </li>
-    </ol>
-</ng-container>
+
+<miner-card-error [errors]="connections?.error_log"></miner-card-error>

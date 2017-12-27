@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { MINERS_GET_ALL } from '../store/miners/miners.actions';
 import { IAppState } from '../store';
-import { IXmrStakApiResponse } from '../../typings';
+import { IXmrStakApiResponse, IXmrStakError } from '../../typings';
 
 @Component({
   selector: 'app-dashboard',
@@ -35,7 +35,9 @@ export class DashboardComponent {
       this.rollup.push({
         "minerName": miner.minerName,
         hashRateTotals: miner.data.hashrate.total.slice(0),
-        errors: miner.data.results.error_log.length,
+        errors: miner.data.results.error_log.reduce((total: any, current: IXmrStakError) => {
+          return total + current.count;
+        }, 0),
         sharesGood: miner.data.results.shares_good,
         sharesTotal: miner.data.results.shares_total,
         uptime: miner.data.connection.uptime,
@@ -80,18 +82,18 @@ export class DashboardComponent {
       total.errors = accumulator3;
 
       total.uptimeToString = this.convertUptimeToString(accumulator6);
-      
-      this.rollup.push(total);
-      this.rollup.sort((a:any, b:any)=>{
-        var nameA = a.minerName.toUpperCase(),
-            nameB = b.minerName.toUpperCase();
 
-            if (nameA < nameB) {
-              return -1;
-            }
-            if (nameA > nameB) {
-              return 1;
-            }
+      this.rollup.push(total);
+      this.rollup.sort((a: any, b: any) => {
+        var nameA = a.minerName.toUpperCase(),
+          nameB = b.minerName.toUpperCase();
+
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
       })
       this.ref.markForCheck();
     }

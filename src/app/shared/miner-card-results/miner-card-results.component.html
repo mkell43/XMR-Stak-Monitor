@@ -9,11 +9,4 @@
     <dt>Pool-side hashes</dt>
     <dd>{{results?.hashes_total}}</dd>
 </dl>
-<ng-container *ngIf="results?.error_log.length">
-    <h4>Errors</h4>
-    <ol>
-        <li *ngFor="let error of results?.error_log">
-            {{error}}
-        </li>
-    </ol>
-</ng-container>
+<miner-card-error [errors]="results?.error_log"></miner-card-error>

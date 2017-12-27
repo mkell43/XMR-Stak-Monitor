@@ -31,7 +31,9 @@ minersRouter.get("/getApiResult", (req:Request, res: Response) => {
       "method":"GET"
     }, (error:any, response:Response, data:any)=>{
       try{
-        return res.json({result:"success", minerName:server.name, data:JSON.parse(data)});
+        var minerData = JSON.parse(data);
+        
+        return res.json({result:"success", minerName:server.name, data:minerData});
       }
       catch(ex){
         return res.json({result:"error", minerName:server.name, data:data, url:url});

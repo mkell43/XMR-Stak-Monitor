@@ -1,0 +1,17 @@
+<ng-container *ngIf="errors?.length > 0">
+    <h3>Errors</h3>
+    <table class="table table-stripe">
+        <thead>
+            <th>Count</th>
+            <th>Text</th>
+            <th>Last Seen</th>
+        </thead>
+        <tbody *ngFor="let error of errors">
+            <tr>
+                <td>{{error?.count}}</td>
+                <td>{{error?.text}}</td>
+                <td>{{error?.last_seen * 1000 | date:"yyyy-MM-dd HH:mm:ss Z"}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>

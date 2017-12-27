@@ -10,6 +10,7 @@ import {MinerCardComponent} from "./miner-card/miner-card.component"
 import {MinerCardHashrateComponent} from "./miner-card-hashrate/miner-card-hashrate.component"
 import {MinerCardResultsComponent} from "./miner-card-results/miner-card-results.component"
 import { MinerCardConnectionsComponent } from './miner-card-connections/miner-card-connections.component';
+import { MinerCardErrorComponent } from './miner-card-error/miner-card-error.component';
 @NgModule({
   declarations: [
     TopNavigationComponent,
@@ -18,7 +19,8 @@ import { MinerCardConnectionsComponent } from './miner-card-connections/miner-ca
     MinerCardComponent,
     MinerCardHashrateComponent,
     MinerCardResultsComponent,
-    MinerCardConnectionsComponent
+    MinerCardConnectionsComponent,
+    MinerCardErrorComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { MinerCardConnectionsComponent } from './miner-card-connections/miner-ca
     MinerCardComponent,
     MinerCardHashrateComponent,
     MinerCardResultsComponent,
-    MinerCardConnectionsComponent
+    MinerCardConnectionsComponent,
+    MinerCardErrorComponent
   ]
 })
 export class SharedModule {}

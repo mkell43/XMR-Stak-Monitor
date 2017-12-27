@@ -52,17 +52,23 @@ export class MinerCardComponent implements OnInit {
           .subscribe((data) => {
             this.apiResult = data;
             this.minerUpdated.emit(data);
-            this.hashRateCard.notify(data);
-            this.minerCardResults.notify(data);
-            this.minerCardConnections.notify(data);
+            this.notify(this.hashRateCard, data);
+            this.notify(this.minerCardResults, data);
+            this.notify(this.minerCardConnections, data);
           },(error)=>{
             this.apiResult = error;
             this.minerUpdated.emit(error);
-            this.hashRateCard.notify(error);
-            this.minerCardResults.notify(error);
-            this.minerCardConnections.notify(error);
+            this.notify(this.hashRateCard, error);
+            this.notify(this.minerCardResults, error);
+            this.notify(this.minerCardConnections, error);
           });
       });
+  }
+
+  notify(component, data){
+      if(component && component.notify){
+        component.notify(data);
+      }
   }
 
   ngOnDestroy(){
